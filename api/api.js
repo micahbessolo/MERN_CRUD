@@ -1,6 +1,7 @@
 const express = require("express");
 // const morgan = require("morgan");
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const port = '3000'
 
@@ -18,6 +19,15 @@ app.use(function(req, res, next) {
     next();
 });
 
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', (req, res) => {
+    res.send("hello world");
+})
+
+// POST method route
+app.post('/', (req, res) => {
+    res.send('POST request to the homepage');
+})
 
 
 app.listen(port, () => {
