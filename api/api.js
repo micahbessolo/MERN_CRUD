@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 // const morgan = require("morgan");
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -21,11 +21,12 @@ app.use(function(req, res, next) {
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (req, res) => {
+    console.log(req.header('Authorization'))
     res.send("hello world");
 })
 
 // POST method route
-app.post('/', (req, res) => {
+app.post('/api', (req, res) => {
     res.send('POST request to the homepage');
 })
 
